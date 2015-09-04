@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Crawlers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Desc</th>
+      <th>Url</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crawlers.each do |crawler| %>
+      <tr>
+        <td><%= crawler.title %></td>
+        <td><%= crawler.desc %></td>
+        <td><%= crawler.url %></td>
+        <td><%= crawler.notes %></td>
+        <td><%= link_to 'Show', crawler %></td>
+        <td><%= link_to 'Edit', edit_crawler_path(crawler) %></td>
+        <td><%= link_to 'Destroy', crawler, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crawler', new_crawler_path %>
