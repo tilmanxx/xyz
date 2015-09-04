@@ -1,8 +1,4 @@
 class Crawler < ActiveRecord::Base
-
-  validates_presence_of :title, :desc
-
-
-  
-
+  validates :title, presence: true
+  validates :desc, presence: true
 end
