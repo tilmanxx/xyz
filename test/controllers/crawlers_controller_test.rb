@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CrawlersControllerTest < ActionController::TestCase
   setup do
@@ -17,8 +17,13 @@ class CrawlersControllerTest < ActionController::TestCase
   end
 
   test "should create crawler" do
-    assert_difference('Crawler.count') do
-      post :create, crawler: { desc: @crawler.desc, notes: @crawler.notes, title: @crawler.title, url: @crawler.url }
+    assert_difference("Crawler.count") do
+      post :create, crawler: { 
+                      desc: @crawler.desc, 
+                      notes: @crawler.notes, 
+                      title: @crawler.title, 
+                      url: @crawler.url 
+      }
     end
 
     assert_redirected_to crawler_path(assigns(:crawler))
@@ -35,12 +40,17 @@ class CrawlersControllerTest < ActionController::TestCase
   end
 
   test "should update crawler" do
-    patch :update, id: @crawler, crawler: { desc: @crawler.desc, notes: @crawler.notes, title: @crawler.title, url: @crawler.url }
+    patch :update, id: @crawler, crawler: { 
+                         desc: @crawler.desc, 
+                         notes: @crawler.notes, 
+                         title: @crawler.title, 
+                         url: @crawler.url 
+    }
     assert_redirected_to crawler_path(assigns(:crawler))
   end
 
   test "should destroy crawler" do
-    assert_difference('Crawler.count', -1) do
+    assert_difference("Crawler.count", -1) do
       delete :destroy, id: @crawler
     end
 
